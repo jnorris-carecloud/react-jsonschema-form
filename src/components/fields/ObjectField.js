@@ -98,7 +98,7 @@ class ObjectField extends Component {
       description,
       TitleField,
       DescriptionField,
-      properties: orderedProperties.map(name => {
+      properties: orderedProperties.map((name, index) => {
         return {
           content: (
             <SchemaField
@@ -106,7 +106,7 @@ class ObjectField extends Component {
               name={name}
               required={this.isRequired(name)}
               schema={schema.properties[name]}
-              uiSchema={uiSchema[name]}
+              uiSchema={{ ...(uiSchema[name] || {}), 'ui:fieldIndex': index }}
               errorSchema={errorSchema[name]}
               idSchema={idSchema[name]}
               formData={formData[name]}

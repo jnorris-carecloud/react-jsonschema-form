@@ -97,6 +97,8 @@ class SelectWidget extends React.Component {
       autofocus,
     } = this.props;
 
+    console.log('$$ index', this.props.options.fieldIndex);
+
     const selectProps = {
       id,
       multi,
