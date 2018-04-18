@@ -80,6 +80,14 @@ class SelectWidget extends React.Component {
       });
   };
 
+  getValue = value => {
+    if (this.async && value && value.value) {
+      value = (this.state.options || []).find(option => option.value === value.value);
+    }
+
+    return value === undefined ? '' : value;
+  };
+
   render = () => {
     const {
       id,
@@ -106,7 +114,7 @@ class SelectWidget extends React.Component {
       placeholder: placeholder || label,
       name: id,
       disabled: disabled || readonly,
-      value: typeof value === 'undefined' ? '' : value,
+      value: this.getValue(value),
     };
 
     if (this.async) {
