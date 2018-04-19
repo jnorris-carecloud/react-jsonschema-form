@@ -81,10 +81,14 @@ class SelectWidget extends React.Component {
   };
 
   getValue = value => {
+    // When the widget is configure to call an endpoint on page load, look through the options
+    // in order to display a pre-selected value correctly
     if (this.async && value && value.value) {
       value = (this.state.options || []).find(option => option.value === value.value);
     }
 
+    // Return an empty string if the value is undefined, otherwise, the Select component would
+    // become uncontrolled
     return value === undefined ? '' : value;
   };
 
