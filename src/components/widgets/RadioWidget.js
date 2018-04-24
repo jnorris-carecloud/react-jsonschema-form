@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { FormControlLabel, RadioGroup, Radio } from '@carecloud/material-cuil';
+
+import { getComponentProps } from '../../utils';
 
 function RadioWidget(props) {
   const { id, options, value, required, disabled, readonly, onChange } = props;
@@ -37,7 +40,7 @@ function RadioWidget(props) {
           <FormControlLabel
             key={index}
             disabled={isDisabled}
-            control={<Radio />}
+            control={<Radio {...getComponentProps(props)} />}
             value={optionValue}
             label={option.label}
           />

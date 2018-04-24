@@ -681,3 +681,7 @@ export function rangeSpec(schema) {
   }
   return spec;
 }
+
+export function getComponentProps(props) {
+  return props && props.options && props.options.componentProps ? props.options.componentProps : {};
+}
