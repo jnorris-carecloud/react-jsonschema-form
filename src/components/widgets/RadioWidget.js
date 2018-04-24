@@ -67,7 +67,7 @@ if (process.env.NODE_ENV !== 'production') {
     disabled: PropTypes.bool,
     readonly: PropTypes.bool,
     autofocus: PropTypes.bool,
-    onChange: PropTypes.func,
+    onChange: PropTypes.func.isRequired,
   };
 }
 export default RadioWidget;

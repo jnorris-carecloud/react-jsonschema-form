@@ -54,7 +54,7 @@ if (process.env.NODE_ENV !== 'production') {
     required: PropTypes.bool,
     disabled: PropTypes.bool,
     autofocus: PropTypes.bool,
-    onChange: PropTypes.func,
+    onChange: PropTypes.func.isRequired,
     label: PropTypes.string,
   };
 
@@ -66,7 +66,7 @@ if (process.env.NODE_ENV !== 'production') {
     disabled: PropTypes.bool,
     readonly: PropTypes.bool,
     autofocus: PropTypes.bool,
-    onChange: PropTypes.func,
+    onChange: PropTypes.func.isRequired,
     label: PropTypes.string,
   };
 }
