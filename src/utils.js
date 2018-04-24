@@ -1,7 +1,8 @@
 import React from 'react';
 import 'setimmediate';
+import { get, isObject as _isObject } from 'lodash';
+
 import validateFormData from './validate';
-import { isObject as _isObject } from 'lodash';
 
 const widgetMap = {
   boolean: {
@@ -683,5 +684,5 @@ export function rangeSpec(schema) {
 }
 
 export function getComponentProps(props) {
-  return props && props.options && props.options.componentProps ? props.options.componentProps : {};
+  return get(props, 'options.componentProps', {}) || {};
 }
