@@ -187,6 +187,7 @@ function SchemaFieldRender(props) {
     case 'array':
       displayLabel =
         isMultiSelect(schema, definitions) || isFilesArray(schema, uiSchema, definitions);
+
       // If it's an array of objects, use a div element
       useDiv = !!schema.items && schema.items.type === 'object';
 

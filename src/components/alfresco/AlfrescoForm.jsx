@@ -17,6 +17,12 @@ const style = ({ theme }) => ({
       margin: '10px 0px',
     }
   },
+  objectContainer: {
+    marginBottom: 14,
+  },
+  arrayContainer: {
+    marginBottom: 24,
+  },
 });
 
 class AlfrescoForm extends Component {
@@ -74,7 +80,7 @@ class AlfrescoForm extends Component {
         const component = this.props.properties.filter(property => property.name === containerKey)[0];
 
         return (
-          <Grid item key={containerIndex} xs={12} style={{ marginBottom: 24 }}>
+          <Grid item key={containerIndex} xs={12} className={classes.arrayContainer}>
             {component.content}
           </Grid>
         );
@@ -89,7 +95,7 @@ class AlfrescoForm extends Component {
       }
 
       return (
-        <Grid item key={containerIndex} xs={12} style={{ marginBottom: 14 }}>
+        <Grid item key={containerIndex} xs={12} className={classes.objectContainer}>
           {this.renderContainerTitle(container)}
 
           {fields.map((rows, fieldRowIndex) => {
